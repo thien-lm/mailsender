@@ -7,8 +7,8 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 
-import javax.mail.MessagingException;
-import javax.mail.internet.MimeMessage;
+import jakarta.mail.MessagingException;
+import jakarta.mail.internet.MimeMessage;
 import java.io.File;
 
 @Service
@@ -21,15 +21,13 @@ public class EmailSenderService {
                                 String body
     ) {
         SimpleMailMessage message = new SimpleMailMessage();
-        message.setFrom("fromemail@gmail.com");
+        message.setFrom("pklandlmt@gmail.com");
         message.setTo(toEmail);
         message.setText(body);
         message.setSubject(subject);
         mailSender.send(message);
         System.out.println("Mail Send...");
-
-
     }
 
-    }
+
 }
